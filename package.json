@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -14,6 +15,7 @@
     "date-fns": "^2.21.3",
     "eslint-plugin-react-hooks": "^4.2.0",
     "next": "10.2.0",
+    "npm-force-resolutions": "^0.0.10",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
@@ -35,5 +37,8 @@
     "eslint-plugin-react": "^7.21.5",
     "prettier": "^2.3.0",
     "typescript": "^4.2.4"
+  },
+  "resolutions": {
+    "@types/react": "17.0.30"
   }
 }
