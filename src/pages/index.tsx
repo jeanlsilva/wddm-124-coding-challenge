@@ -10,7 +10,12 @@ import ModalCart from '../components/ModalCart';
 import { api } from '../services/api';
 import { useCart } from '../hooks/useCart';
 
-import { GridItem, GridContainer, ListSettings, LinkContainer } from './styles';
+import {
+  GridItem,
+  GridContainer,
+  ListSettings,
+  LinkContainer,
+} from '../styles';
 import ModalSignup from '../components/ModalSignup';
 
 interface ProductFields {
@@ -147,7 +152,7 @@ export default function Home({ staticProducts }: HomeProps): JSX.Element {
         const response = await api.post('/users', {
           name,
           email,
-          password
+          password,
         });
 
         if (response.data.error) {
@@ -155,19 +160,19 @@ export default function Home({ staticProducts }: HomeProps): JSX.Element {
         } else {
           setInputError('');
 
-          alert('User successfully created. You can log into the app now')
+          alert('User successfully created. You can log into the app now');
 
           handleSignIn({
             email: response.data.email,
-            password: response.data.password
+            password: response.data.password,
           });
 
           toggleModalSignup();
         }
       }
     },
-    [toggleModalSignup]
-  )
+    [toggleModalSignup],
+  );
 
   const handleSignOut = useCallback(() => {
     setUser(null);
