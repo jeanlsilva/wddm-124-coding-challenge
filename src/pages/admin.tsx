@@ -287,7 +287,7 @@ export default function Admin({ staticProducts }: AdminProps): JSX.Element {
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await api.get('/products/name_asc');
 
-  const products = data.map(item => {
+  const products = (data || []).map(item => {
     return {
       id: item.id,
       name: item.name,
