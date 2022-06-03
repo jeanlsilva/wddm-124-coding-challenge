@@ -10,7 +10,7 @@ import ModalLogin from '../components/ModalLogin';
 import ModalAddProduct from '../components/ModalAddProduct';
 import Product from '../components/Product';
 
-import { GridItem, GridContainer, ListSettings } from './styles';
+import { GridItem, GridContainer, ListSettings } from '../styles';
 import ModalEditProduct from '../components/ModalEditProduct';
 
 interface ProductFields {
@@ -137,7 +137,9 @@ export default function Admin({ staticProducts }: AdminProps): JSX.Element {
 
   const handleDelete = useCallback(async product => {
     try {
-      const confirmation = confirm('Are you sure you want to delete the product?');
+      const confirmation = confirm(
+        'Are you sure you want to delete the product?',
+      );
 
       if (confirmation) {
         await api.delete(`products/${product.id}`);
