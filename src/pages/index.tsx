@@ -320,23 +320,29 @@ export default function Home({ staticProducts }: HomeProps): JSX.Element {
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await api.get('/products/name_asc');
+  if (data) {
+    const products = data.map(item => {
+      return {
+        id: item.id,
+        name: item.name,
+        description: item.description,
+        price: item.price,
+        promoPrice: item.promoPrice,
+        statusFlag: item.statusFlag,
+        imageUrl: item.imageUrl,
+        category: item.category,
+      };
+    });
 
-  const products = (data || []).map(item => {
     return {
-      id: item.id,
-      name: item.name,
-      description: item.description,
-      price: item.price,
-      promoPrice: item.promoPrice,
-      statusFlag: item.statusFlag,
-      imageUrl: item.imageUrl,
-      category: item.category,
+      props: {
+        staticProducts: products,
+      },
     };
-  });
-
+  }
   return {
     props: {
-      staticProducts: products,
+      staticProducts: [],
     },
   };
 };
