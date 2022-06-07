@@ -28,7 +28,8 @@ export const Container = styled.div`
       padding: 10px;
 
       img {
-        width: 100px;
+        width: 200px;
+        object-fit: contain;
       }
     }
   }

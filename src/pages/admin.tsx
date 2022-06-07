@@ -255,7 +255,7 @@ export default function Admin({ staticProducts }: AdminProps): JSX.Element {
                 type="text"
                 ref={filterInputRef}
                 onChange={() => handleFilter(filterInputRef)}
-                placeholder="Filtrar por"
+                placeholder="Filter by"
               />
               <input
                 type="checkbox"
