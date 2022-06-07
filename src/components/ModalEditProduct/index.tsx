@@ -83,7 +83,9 @@ const ModalEditProduct = ({
             : productUpdated.price,
         promoPrice:
           ref.current.name === 'promoPrice'
-            ? (ref.current.value !== '' ? ref.current.value : null)
+            ? ref.current.value !== ''
+              ? ref.current.value
+              : null
             : productUpdated.promoPrice,
         statusFlag:
           ref.current.name === 'statusFlag'
@@ -152,7 +154,7 @@ const ModalEditProduct = ({
             ref={inputStatusFlagRef}
             name="statusFlag"
             onChange={() => handleChange(inputStatusFlagRef)}
-            value={productUpdated.statusFlag === 'Active' ? 0 : 1}
+            value={productUpdated.statusFlag}
           >
             <option>Active</option>
             <option>Inactive</option>

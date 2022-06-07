@@ -15,7 +15,8 @@ export const FormAddProduct = styled.form`
     align-items: center;
     margin-bottom: 20px;
 
-    input {
+    input,
+    select {
       width: 100%;
       height: 40px;
       border: 1px solid #8257e5;

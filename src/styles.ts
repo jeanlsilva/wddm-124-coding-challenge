@@ -19,7 +19,7 @@ export const GridContainer = styled.div`
 `;
 
 export const LinkContainer = styled.a`
-  position: absolute;
+  position: fixed;
   bottom: 5px;
   right: 5px;
   cursor: pointer;

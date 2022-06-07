@@ -53,7 +53,7 @@ export default function CartProvider({
     product => {
       const productIndex = products.findIndex(item => item.id === product.id);
 
-      if (product.statusFlag === 'Ativo') {
+      if (product.statusFlag === 'Active') {
         if (productIndex >= 0) {
           const productsList = products;
           productsList[productIndex].quantity += 1;
@@ -84,7 +84,7 @@ export default function CartProvider({
           );
         }
       } else {
-        throw new Error('Produto indisponível no estoque');
+        alert('Product not available in stock');
       }
     },
     [products],
@@ -115,7 +115,7 @@ export default function CartProvider({
 
         setProducts([...productsList]);
       } else {
-        const response = confirm('Remover o produto do carrinho?');
+        const response = confirm('Remove the product from the cart?');
 
         if (response) {
           productsList.splice(index, 1);

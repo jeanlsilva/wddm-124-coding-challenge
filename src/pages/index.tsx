@@ -298,17 +298,19 @@ export default function Home({ staticProducts }: HomeProps): JSX.Element {
           </div>
         </ListSettings>
         <GridItem>
-          {products.map(product => {
-            return (
-              <Product
-                key={product.id}
-                product={product}
-                addToCart={addToCart}
-                edit={null}
-                remove={null}
-              />
-            );
-          })}
+          {products
+            .filter(product => product.statusFlag.toLowerCase() === 'active')
+            .map(product => {
+              return (
+                <Product
+                  key={product.id}
+                  product={product}
+                  addToCart={addToCart}
+                  edit={null}
+                  remove={null}
+                />
+              );
+            })}
         </GridItem>
       </GridContainer>
       <Link href="/admin">

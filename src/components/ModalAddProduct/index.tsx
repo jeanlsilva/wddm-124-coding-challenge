@@ -28,7 +28,10 @@ const ModalAddProduct = ({
         name: inputNameRef.current.value,
         description: inputDescriptionRef.current.value,
         price: inputPriceRef.current.value,
-        promoPrice: inputPromoPriceRef.current.value !== '' ? inputPromoPriceRef.current.value : null,
+        promoPrice:
+          inputPromoPriceRef.current.value !== ''
+            ? inputPromoPriceRef.current.value
+            : null,
         statusFlag: inputStatusFlagRef.current.value,
         imageUrl: inputImageUrlRef.current.value,
         category: inputCategoryRef.current.value,
@@ -67,7 +70,10 @@ const ModalAddProduct = ({
           />
         </div>
         <div>
-          <input ref={inputStatusFlagRef} type="text" placeholder="Status" />
+          <select name="statusFlag" ref={inputStatusFlagRef}>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
         </div>
         <div>
           <input ref={inputImageUrlRef} type="text" placeholder="Image" />
